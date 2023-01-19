@@ -74,7 +74,7 @@ def age_in_10_years(age):
     print(age + 10)
 
 
-age_in_10_years(40)
+age_in_10_years(30)
 
 
 
