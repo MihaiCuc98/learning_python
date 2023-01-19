@@ -51,9 +51,30 @@ books = [["Burgess", 1985],
 filtered_books = list(filter(lambda item: type(item[1]) == str, books))
 print("Filtered books: " + str(filtered_books))
 
-
-
 letters = ['r', 'e', 'd', 'u', 'c', 'e']
 
-word = str(reduce(lambda x,y: str(x+y), letters))
+word = str(reduce(lambda x, y: str(x + y), letters))
 print(word)
+
+
+# __________Decorators_______________
+# Decorators are special functions which we can use to add functionality to an existing function
+
+def get_name_and_age_in_10_years(age_function):
+    def printing_things(*args):  # this is necessary for using the function with arguments
+        print("Mihai will gonna be: ")
+        age_function(*args)
+        print("old in 10 years")
+
+    return printing_things
+
+
+@get_name_and_age_in_10_years
+def age_in_10_years(age):
+    print(age + 10)
+
+
+age_in_10_years(30)
+
+
+
