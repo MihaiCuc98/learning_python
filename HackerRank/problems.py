@@ -1,3 +1,7 @@
+# imports:
+import textwrap
+#
+#
 # if __name__ == '__main__':
 #     n = int(input().strip())
 #     if n >=1 and n<= 100 :
@@ -260,3 +264,76 @@
 
 
 # ---------- Mutations
+#
+# def mutate_string(string, position, character):
+#     final_string = string[:position] + character + string[position+1:]
+#     return final_string
+#
+# if __name__ == '__main__':
+#     s = input()
+#     i, c = input().split()
+#     s_new = mutate_string(s, int(i), c)
+#     print(s_new)
+
+
+# ---------- String Validators
+
+# if __name__ == '__main__':
+#     s = input()
+#     s_list = list(s)
+#     bool_list = [False, False, False, False, False]
+#     if len(s) >0 and len(s)<1000:
+#         for elemenet in s_list:
+#             if elemenet.isalnum():
+#                 bool_list[0] = True
+#         for elemenet in s_list:
+#             if elemenet.isalpha():
+#                 bool_list[1] = True
+#         for elemenet in s_list:
+#             if elemenet.isdigit():
+#                 bool_list[2] = True
+#         for elemenet in s_list:
+#             if elemenet.islower():
+#                 bool_list[3] = True
+#         for elemenet in s_list:
+#             if elemenet.isupper():
+#                 bool_list[4] = True
+#         for item in bool_list:
+#             print(item)
+
+
+# ---------- Text Alignment
+
+# thickness = int(input()) #This must be an odd number
+# c = 'H'
+#
+# #Top Cone
+# for i in range(thickness):
+#     print((c*i).rjust(thickness-1)+c+(c*i).ljust(thickness-1))
+#
+# #Top Pillars
+# for i in range(thickness+1):
+#     print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+#
+# #Middle Belt
+# for i in range((thickness+1)//2):
+#     print((c*thickness*5).center(thickness*6))
+#
+# #Bottom Pillars
+# for i in range(thickness+1):
+#     print((c*thickness).center(thickness*2)+(c*thickness).center(thickness*6))
+#
+# #Bottom Cone
+# for i in range(thickness):
+#     print(((c*(thickness-i-1)).rjust(thickness)+c+(c*(thickness-i-1)).ljust(thickness)).rjust(thickness*6))
+
+
+# ---------- Text Wrap
+
+# def wrap(string, max_width):
+#     return textwrap.fill(string, max_width)
+#
+# if __name__ == '__main__':
+#     string, max_width = input(), int(input())
+#     result = wrap(string, max_width)
+#     print(result)
