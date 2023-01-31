@@ -1,5 +1,17 @@
 # imports:
+import itertools
+from itertools import combinations
+
 import textwrap
+import math
+import os
+import random
+import re
+import sys
+import calendar
+from datetime import date
+from itertools import combinations
+
 #
 #
 # if __name__ == '__main__':
@@ -337,3 +349,219 @@ import textwrap
 #     string, max_width = input(), int(input())
 #     result = wrap(string, max_width)
 #     print(result)
+
+
+# ---------- Introduction to Sets
+#
+# def average(array):
+#     if len(array) == n:
+#         result = sum(set(array))/len(set(array))
+#         return "%.3f" % result
+
+# set =  is an unordered collection of elements without duplicate entries
+# if __name__ == '__main__':
+#     n = int(input())
+#     arr = list(map(int, input().split()))
+#     result = average(arr)
+#     print(result)
+
+
+# ---------- The Minion Game
+
+# def minion_game(string):
+#     string_split = []
+#     for i in range(len(string)):
+#         string_split.append(string[i])
+#     vowels = ['A', 'E', 'I', 'O', 'U']
+#     stuart_score = 0
+#     stuart_consonants = []
+#     kevin_score = 0
+#     kevin_vowels = []
+#     list_permutations = []
+#     for i in range(len(string_split)):
+#         if string[i] in vowels:
+#             if string[i] not in kevin_vowels:
+#                 kevin_vowels.append(string_split[i])
+#         elif string[i] not in stuart_consonants:
+#             stuart_consonants.append(string_split[i])
+#     print(kevin_vowels, stuart_consonants)
+#     # stuart
+#     list_strings = []
+#     for i in range(len(string_split)):
+#         comb = combinations(string_split, 2 + i)
+#         for j in list(comb):
+#             list_permutations.append(list(j))
+#     sting = ""
+#     for item in list_permutations:
+#         for y in item:
+#             sting += str(y)
+#             list_strings.append(sting)
+#         sting = ""
+#     no_duplicate_list = []
+#     [no_duplicate_list.append(element) for element in list_strings if element not in no_duplicate_list]
+#     string_to_work = string
+#     kevin_combinations = []
+#     stuart_combinations = []
+#     for item in no_duplicate_list:
+#         if item[0] in kevin_vowels:
+#             kevin_combinations.append(item)
+#         else:
+#             stuart_combinations.append(item)
+#     for item in kevin_combinations:
+#         for i in range(len(string)):
+#             kevin_score += string_to_work.count(item)
+#             string_to_work = string_to_work[i:]
+#     stuart_string = string
+#     for item in stuart_combinations:
+#         for i in range(len(string)):
+#             stuart_score += stuart_string.count(item)
+#             stuart_string = stuart_string[i:]
+
+# for i in range(len(string)):
+#     index = string.find(sub_string)
+#     print(index)
+#     string_to_work = string_to_work[index + 1:]
+
+# print(list(list_permutations))
+# print(list_strings)
+# print(no_duplicate_list)
+# print(kevin_combinations, stuart_combinations)
+# print(kevin_score, stuart_score)
+
+#
+
+# solution from the site:   soo smart
+# def minion_game(string):
+#     length = len(string)
+#     kevin_score, stuart_score = 0, 0
+#
+#     for i in range(length):
+#         print(string[i])
+#         if string[i] in 'AEIOU':
+#
+#             kevin_score += length - i
+#         else:
+#             stuart_score += length - i
+#
+#     if kevin_score > stuart_score:
+#         print('Kevin', kevin_score)
+#     elif kevin_score < stuart_score:
+#         print('Stuart', stuart_score)
+#     else:
+#         print('Draw')
+
+
+# # stuart
+# for i in range(len(stuart_consonants)):
+#     for y in range(len(string_split)):
+#         stuart_consonants[i] = str(stuart_consonants[i])+string_split[y]
+#         stuart_score = stuart_score + string.count(stuart_consonants[i])
+# print(stuart_score)
+#
+# if __name__ == '__main__':
+#     s = input()
+#     minion_game(s)
+
+
+# def minion_game(string):
+#     length = len(string)
+#     kevin_score, stuart_score = 0, 0
+#
+#     for i in range(length):
+#         print(string[i])
+#         if string[i] in 'AEIOU':
+#
+#             kevin_score += length - i
+#         else:
+#             stuart_score += length - i
+#
+#     if kevin_score > stuart_score:
+#         print('Kevin', kevin_score)
+#     elif kevin_score < stuart_score:
+#         print('Stuart', stuart_score)
+#     else:
+#         print('Draw')
+#     print('Kevin', kevin_score)
+#
+# if __name__ == '__main__':
+#     s = input()
+#     minion_game(s)
+
+
+# ---------- String Formatting
+
+# def print_formatted(number):
+#     if 1 <= number <= 100:
+#         for i in range(number + 1):
+#             if i == 0:
+#                 continue
+#             print(str(i).rjust(len(format(number, 'b'))) + str(
+#                 format(i, 'o')).rjust(len(format(number, 'b'))+1) + str(format(i,'x')).rjust(len(format(number, 'b'))+1) + str(format(i, 'b')).rjust(len(format(number, 'b'))+1))
+#
+#
+#
+# if __name__ == '__main__':
+#     n = int(input())
+#     print_formatted(n)
+
+
+# ---------- Capitalize
+
+#
+# def solve(s):
+#     if 0 < len(s) < 100:
+#         index = s.find(" ")
+#         first_capitalize = s[0].upper()
+#         second_capitalize = s[index + 1].upper()
+#         print(first_capitalize + s[1:index] + " " + second_capitalize + s[index + 2:])
+#     return
+#
+#
+# if __name__ == '__main__':
+#     s = input()
+#     result = solve(s)
+
+
+# ---------- Calendar Module
+
+# if __name__ == '__main__':
+#     s = input().split(" ")
+#     day_dict = {
+#         0: "MONDAY",
+#         1: "TUESDAY",
+#         2: "WEDNESDAY",
+#         3: "THURSDAY",
+#         4: "FRIDAY",
+#         5: "SATURDAY",
+#         6: "SUNDAY"
+#     }
+#
+#     day_number = calendar.weekday(int(s[2]), int(s[0]), int(s[1]))
+#     print(day_dict[day_number])
+
+
+# ---------- itertools.permutations()
+
+# if __name__ == '__main__':
+#     s = input().split(" ")
+#     comb = itertools.permutations(str(s[0]), int(s[1]) )
+#     list_comb = list(comb)
+#     list_comb.sort()
+#     for i in range(len(list_comb)):
+#         print(''.join(list_comb[i]))
+
+
+# ---------- itertools.combinations()
+
+# if __name__ == '__main__':
+#     s = input().split(" ")
+#     split_string = []
+#     [split_string.append(s[0][i]) for i in range(len(s[0]))]
+#     split_string.sort()
+#     string_after_sort = "".join(split_string)
+#     big_list_comb = []
+#     for i in range(int(s[1])):
+#         big_list_comb.append(sorted(list(combinations(string_after_sort, int(i+1)))))
+#     for i in big_list_comb:
+#         for y in i:
+#             print(''.join(y))
