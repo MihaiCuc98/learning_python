@@ -3,6 +3,7 @@ import itertools
 from itertools import combinations
 
 import textwrap
+import cmath
 import math
 import os
 import random
@@ -11,6 +12,8 @@ import sys
 import calendar
 from datetime import date
 from itertools import combinations
+from itertools import combinations_with_replacement
+
 
 #
 #
@@ -490,13 +493,9 @@ from itertools import combinations
 
 # ---------- String Formatting
 
-# def print_formatted(number):
-#     if 1 <= number <= 100:
-#         for i in range(number + 1):
-#             if i == 0:
-#                 continue
-#             print(str(i).rjust(len(format(number, 'b'))) + str(
-#                 format(i, 'o')).rjust(len(format(number, 'b'))+1) + str(format(i,'x')).rjust(len(format(number, 'b'))+1) + str(format(i, 'b')).rjust(len(format(number, 'b'))+1))
+# def print_formatted(number): if 1 <= number <= 100: for i in range(number + 1): if i == 0: continue print(str(
+# i).rjust(len(format(number, 'b'))) + str( format(i, 'o')).rjust(len(format(number, 'b'))+1) + str(format(i,
+# 'x')).rjust(len(format(number, 'b'))+1) + str(format(i, 'b')).rjust(len(format(number, 'b'))+1))
 #
 #
 #
@@ -565,3 +564,147 @@ from itertools import combinations
 #     for i in big_list_comb:
 #         for y in i:
 #             print(''.join(y))
+
+
+# ---------- itertools.product()
+
+# if __name__ == '__main__':
+#     A = list(map(int,input().strip().split()))
+#     B = list(map(int,input().strip().split()))
+#     if 0 < len(A) < 30 and 0 < len(B) < 30:
+#         A.sort()
+#         B.sort()
+#         str_to_output = ""
+#         prod = itertools.product(A, B)
+#         for i in list(prod):
+#             str_to_output = str_to_output + str(i) + " "
+#         print(str_to_output)
+
+
+# ---------- itertools.combinations_with_replacement()
+
+# if __name__ == '__main__':
+#     S = input().split(" ")
+#     split_string = []
+#     [split_string.append(S[0][i]) for i in range(len(S[0]))]
+#     split_string.sort()
+#     new_string = "".join(split_string)
+#     if 0 < int(S[1]) <= len(S[0]) and new_string.isupper():
+#         comb = combinations_with_replacement(new_string, int(S[1]))
+#         for i in list(comb):
+#             print("".join(i))
+
+
+# ---------- Power - Mod Power
+
+# if __name__ == '__main__':
+#      A = int(input())
+#      B = int(input())
+#      m = int(input())
+#      print(int(pow(A, B)))
+#      if B >=0:
+#          print(int(pow(A,B,m)))
+
+
+# ---------- Mod Divmod
+
+# if __name__ == '__main__':
+#     a = int(input())
+#     b = int(input())
+#     print(a // b)
+#     print(a % b)
+#     print(divmod(a, b))
+
+
+# ---------- Integers Come In All Sizes
+
+# if __name__ == '__main__':
+#     a = int(input())
+#     b = int(input())
+#     c = int(input())
+#     d = int(input())
+#     if 1 <= a <= 1000 and\
+#        1 <= b <= 1000 and\
+#        1 <= c<= 1000 and \
+#        1 <= d <= 1000:
+#         print(a**b + c**d)
+
+
+# ---------- Polar Coordinates
+
+# if __name__ == '__main__':
+#     compl = input()
+#     index_to_split = 0
+#     if compl.find("-") == 0:
+#         index_to_split = compl[1:].find("-") + 1
+#     else:
+#         index_to_split = compl.find("-")
+#     if compl.find("+")>0:
+#         index_to_split = compl.find("+")
+#     x = int(compl[:index_to_split])
+#     y = int(compl[index_to_split:compl.index("j")])
+#     print(math.sqrt(x ** 2 + y ** 2))
+#     print(cmath.phase(complex(x, y)))
+
+
+# ---------- Set .add()
+
+# Documentation:
+# 1. Sets are used to store multiple items in a single variable.
+# 2. Set items are unordered, unchangeable, and do not allow duplicate values
+#
+#
+# if __name__ == '__main__':
+#     N = int(input())
+#     items = []
+#     for i in range(N):
+#         items.append(input())
+#     set_items = {items[0]}
+#     for i in range(N - 1):
+#         try:
+#             set_items.add(items[i])
+#         except Exception:
+#             continue
+#     print(len(set_items))
+
+
+# ---------- Set .discard(), .remove() & .pop()
+
+# n = int(input())
+# s = set(map(int, input().split()))
+# N = int(input())
+# sum_elem = 0
+# if n == len(s):
+#     for i in range(N):
+#         cmd = input().split(" ")
+#         if cmd[0] == "pop":
+#             s.pop()
+#         if cmd[0] == "remove":
+#             s.remove(int(cmd[1]))
+#         if cmd[0] == "discard":
+#             s.discard(int(cmd[1]))
+#     for i in s:
+#         sum_elem += i
+#     print(sum_elem)
+
+
+# ---------- Two Sum ---- LeetCode.com
+
+# def twoSum(nums: list, target: int):
+#     comb = combinations(nums, 2)
+#     mini_list = []
+#
+#     for i in list(comb):
+#         if sum(i) == target:
+#             mini_list.append(i[0])
+#             mini_list.append(i[1])
+#             break
+#     print(mini_list)
+#     if mini_list[0] == mini_list[1]:
+#         result = [int(nums.index(mini_list[0])), int(nums.index(mini_list[1], int(nums.index(mini_list[0]))+1))]
+#     else:
+#         result = [int(nums.index(mini_list[0])), int(nums.index(mini_list[1]))]
+#     return result
+# big_list = []
+# result = twoSum(big_list, 19999)
+# print(result)
