@@ -14,7 +14,6 @@ from datetime import date
 from itertools import combinations
 from itertools import combinations_with_replacement
 
-
 #
 #
 # if __name__ == '__main__':
@@ -708,3 +707,47 @@ from itertools import combinations_with_replacement
 # big_list = []
 # result = twoSum(big_list, 19999)
 # print(result)
+
+
+# ---------- Exceptions
+#
+# if __name__ == '__main__':
+#     T = int(input())
+#     message = ""
+#     for i in range(T):
+#         cmd = input().split(" ")
+#         try:
+#             result = int(cmd[0])%int(cmd[1])
+#             message += str(int(result))
+#         except ZeroDivisionError as e:
+#             message += "Error code: {e}".format(e=e) + '\n'
+#         except ValueError as e:
+#             message += "Error code: " + str(e) + '\n'
+#     print(message)
+
+
+# ---------- No Idea!
+# if __name__ == '__main__':
+#     mn = input().split(" ")
+#     integer_list = list(input().split(" "))
+#     first_set = set(input().split(" "))
+#     second_set = set(input().split(" "))
+#     happiness = 0
+#     for i in integer_list:
+#         if i in first_set:
+#             happiness+=1
+#     for i in integer_list:
+#         if i in second_set:
+#             happiness-=1
+#     print(happiness)
+
+
+
+# a solution with a better time of execution:
+# if __name__ == '__main__':
+#     mn = input().split(" ")
+#     integer_list = list(input().split(" "))
+#     first_set = set(input().split(" "))
+#     second_set = set(input().split(" "))
+#
+#     print(sum([1 for element in integer_list if element in first_set])+ sum([-1 for element in integer_list if element in second_set]))
