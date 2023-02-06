@@ -1,2 +1,6 @@
 .idea
 __pycache__/
+/API testing/.pytest_cache/
+/API testing/API_py/.pytest_cache/
+/API testing/API_py/archive/
+/API testing/API_py/reports/archive/
