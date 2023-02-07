@@ -5,3 +5,7 @@ __pycache__/
 /API testing/API_py/archive/
 /API testing/API_py/reports/archive/
 /API testing/licences_testing/
+/API testing/pytest_api_testing_py/.pytest_cache/
+/API testing/pytest_api_testing_py/archive/
+/API testing/pytest_api_testing_py/reports/archive/
+API testing/pytest_api_testing_py/reports/output.json
