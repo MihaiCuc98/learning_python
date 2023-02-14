@@ -1,7 +1,8 @@
 # imports:
 import itertools
+import numbers
 from itertools import combinations
-
+import numpy
 import textwrap
 import cmath
 import math
@@ -13,7 +14,10 @@ import calendar
 from datetime import date
 from itertools import combinations
 from itertools import combinations_with_replacement
-
+import math
+import os
+import random
+import re
 #
 #
 # if __name__ == '__main__':
@@ -742,7 +746,6 @@ from itertools import combinations_with_replacement
 #     print(happiness)
 
 
-
 # a solution with a better time of execution:
 # if __name__ == '__main__':
 #     mn = input().split(" ")
@@ -751,3 +754,107 @@ from itertools import combinations_with_replacement
 #     second_set = set(input().split(" "))
 #
 #     print(sum([1 for element in integer_list if element in first_set])+ sum([-1 for element in integer_list if element in second_set]))
+
+
+# ---------- MATRIX - HARD! no solved yet
+import math
+import os
+import random
+
+# import re
+# import sys
+#
+# first_multiple_input = input().rstrip().split()
+#
+# n = int(first_multiple_input[0])
+#
+# m = int(first_multiple_input[1])
+#
+# matrix = []
+# string_matrix = ""
+#
+# for _ in range(n):
+#     matrix_item = input()
+#     matrix.append(matrix_item)
+# for x in range(3):
+#     for y in range(len(matrix)):
+#         string_matrix = string_matrix + matrix[y][x]
+# index_x = string_matrix.find('x')
+# index_T = string_matrix.find('T')
+# string_1 = string_matrix[:index_x + 1]
+# print(re.sub("[\W]", " ", string_1))
+
+
+# ---------- Arrays - numpy
+
+# def arrays(arr):
+#     int_list = [float(x) for x in arr]
+#     new_arr = numpy.array(tuple(int_list), float)
+#     return numpy.flip(new_arr)
+#
+#
+# arr = input().strip().split(' ')
+# result = arrays(arr)
+# print(result)
+
+
+# ---------- Zipped!
+#
+# NX = input().split(" ")
+# N = int(NX[0])
+# X = int(NX[1])
+# list_grades = []
+# for i in range(X):
+#     cmd = input().split(" ")
+#     new_list = [float(x) for x in cmd]
+#     list_grades.append(new_list)
+#
+# list_zip = list(zip(*list_grades))
+# for i in range(len(list_zip)):
+#     print(sum(list_zip[i])/X)
+
+
+# ---------- ginortS
+# upper = []
+# lower = []
+# odd = []
+# even = []
+# for i in range(len(sort_string)):
+#     if sort_string[i].isupper():
+#         upper.append(sort_string[i])
+#     elif sort_string[i].islower():
+#         lower.append(sort_string[i])
+#     else:
+#         try:
+#             if int(sort_string[i]) % 2 == 0:
+#                 even.append(sort_string[i])
+#             else:
+#                 odd.append(sort_string[i])
+#         except:
+#             continue
+# lower_string = ''.join([str(item) for item in sorted(lower)])
+# upper_string = ''.join([str(item) for item in sorted(upper)])
+# odd_string = ''.join([str(item) for item in sorted(odd)])
+# even_string = ''.join([str(item) for item in sorted(even)])
+# print(lower_string+upper_string+odd_string+even_string)
+
+# This solution is AWESOME!!!! from cgautcher
+# print(''.join(sorted(input(), key=lambda x: (x.isdigit(), x.isdigit() and not int(x) % 2, x.isupper(), x,))))
+
+
+# ---------- Incorrect Regex
+
+# test_cases = int(input())
+# regex_list = []
+# for i in range(test_cases):
+#     regex_list.append(input())
+# for i in range(test_cases):
+#     try:
+#         re.compile(regex_list[i])
+#         print(True)
+#     except:
+#         print(False)
+
+
+# ---------- Set .union() Operation
+
