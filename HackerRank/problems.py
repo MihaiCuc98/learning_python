@@ -856,5 +856,40 @@ import random
 #         print(False)
 
 
-# ---------- Set .union() Operation
+# ---------- Maximize It!
+# MK = input().split(" ")
+# big_list = []
+# functions = 0
+# for i in range(int(MK[0])):
+#     cmd = input().split(" ")
+#     del cmd[0]
+#     new_list = [int(x) for x in cmd]
+#     big_list.append(new_list)
+# print(big_list)
+#
+#
+# print(list(itertools.product([2,3],[5,7,5], [3,4,3])))
+# for i in range(int(MK[0])):
+#     functions += max(big_list[i]) ** 2
+#     print(functions)
+# print(functions % int(MK[1]))
 
+
+# an interesting solution from HackerRank discussions:
+# from itertools import product
+#
+# n, M = list(map(int, input().split()))
+# tmp = []
+# for i in range(n):
+#     tmp.append(list(map(int, input().split()))[1:])
+# combs = list(product(*tmp))
+# print(max([sum(map(lambda x: x**2, tup))%M for tup in combs]))
+
+
+# ---------- Input()
+xy = [int(x) for x in input().split(" ")]
+polinom = input()
+result = 0
+for i in range(xy[1]):
+    result += xy[0]**i
+print(result == xy[1])
